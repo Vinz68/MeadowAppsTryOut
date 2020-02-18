@@ -19,9 +19,7 @@ namespace OledApp
 
         Ssd1306 display;
         GraphicsLibrary graphics;
-
         Led led;
-
 
 
         public MeadowApp()
@@ -40,7 +38,7 @@ namespace OledApp
 
         void InitializePeripherals()
         {
-            // enable the I2C bus
+            // enable the I2C bus, bit slower clock (Default = 1000)
             var i2CBus = Device.CreateI2cBus(800);
 
             // create display, which is a I2C device
@@ -62,8 +60,6 @@ namespace OledApp
             // add an event handler
             input.Changed += (s, e) =>
             {
-                //Console.WriteLine($"interrupt D03");
-
                 ToggleLed();
             };
 
@@ -103,7 +99,6 @@ namespace OledApp
         protected void Pulse(Color color)
         {
             rgbPwmLed.StartPulse(color);
-            //Console.WriteLine($"Pulsing {color}");
             Thread.Sleep(pulseDuration);
             rgbPwmLed.Stop();
         }

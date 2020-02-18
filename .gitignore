@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/MeadowAppsTryout/DesignTimeBuild
+/.vs/MeadowAppsTryout/v16/Server/sqlite3
+/MeadowApp1/bin/Debug/net472
+/MeadowApp1/obj/Debug/net472
+/MeadowApp1/obj
+/.vs/MeadowAppsTryout/v16
+/OledApp/bin/Debug/net472
+/OledApp/obj/Debug/net472
+/OledApp/obj

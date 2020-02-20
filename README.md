@@ -9,11 +9,11 @@ Main purpose is to have small examples for a certain connected device and learn 
 
 ## Examples
 
-| Project/Folder        | Purpose           | Exta Info        |
+| Project/Folder        | Purpose           | Extra Info        |
 |:---------------:| --------------------- | -------------- |
 | MeadowApp | The default starter template, but changed so it works for everyone. | Since Led.StartPulse gives problems the Led.StartBlink is used.  |
 |  | |  |
-| OledApp | Display text on 128x32 OLED instead of console. Also add a Button to enable a Led  | Pins: D01 = Led, D03 = Button, D08 = OLED-CLK , D07 = OLED-SDA |
+| OledApp | Display text on 128x32 OLED (SSD1306 family). Also adds a Button to enable a Led  | D01=Led, D03=Button, D08=OLED-CLK , D07=OLED-SDA  [0.91 OLED 128x32 I2C SSD1306 ](https://www.aliexpress.com/item/32672229793.html?spm=a2g0s.9042311.0.0.27424c4deGstP2) |
 |  | |  |
 
 

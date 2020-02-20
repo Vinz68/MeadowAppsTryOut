@@ -9,35 +9,53 @@ namespace MeadowApp1
 {
     public class MeadowApp : App<F7Micro, MeadowApp>
     {
-        const int pulseDuration = 3000;
+        const int blinkDuration = 3000;
         readonly RgbPwmLed rgbPwmLed;
 
         public MeadowApp()
         {
-            rgbPwmLed = new RgbPwmLed(Device,
-                       Device.Pins.OnboardLedRed,
-                       Device.Pins.OnboardLedGreen,
-                       Device.Pins.OnboardLedBlue);
+            Console.WriteLine("Initializing...");
 
-            PulseRgbPwmLed();
+            // use onboad RGB led(s)
+            rgbPwmLed = new RgbPwmLed(Device,
+               Device.Pins.OnboardLedRed,
+               Device.Pins.OnboardLedGreen,
+               Device.Pins.OnboardLedBlue);
+
+            Console.WriteLine("Initialize completed.");
         }
 
-        protected void PulseRgbPwmLed()
+
+
+        public void Run()
         {
+            Console.WriteLine("Starting...");
+
             while (true)
             {
-                Pulse(Color.Red);
-                Pulse(Color.Green);
-                Pulse(Color.Blue);
+                DisplayText("Blink RED");
+                Blink(Color.Red);
+                DisplayText("Blink GREEN");
+                Blink(Color.Green);
+                DisplayText("Blink BLUE");
+                Blink(Color.Blue);
+
             }
         }
 
-        protected void Pulse(Color color)
+
+        protected void Blink(Color color)
         {
-            rgbPwmLed.StartPulse(color);
-            Console.WriteLine($"Pulsing {color}");
-            Thread.Sleep(pulseDuration);
+            rgbPwmLed.StartBlink(color);
+            Thread.Sleep(blinkDuration);
             rgbPwmLed.Stop();
         }
+
+
+        protected void DisplayText(string text)
+        {
+            Console.WriteLine(text);
+        }
+
     }
 }

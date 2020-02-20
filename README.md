@@ -1,10 +1,10 @@
 
 ## MeadowAppsTryOut 
-is a Visual Studio solution with a few small applications for the ([meadow F7 Development Board ](https://www.wildernesslabs.co/Meadow)) 
+is a Visual Studio solution with a few small C# applications for the [Meadow F7 Development Board ](https://www.wildernesslabs.co/Meadow)
 
 ## Purpose 
-The TryOuts are a collection of small Apps which are tested and working on the F7.
-Main purpose is to have small examples afor a certain connected device and learn the Meadow APIs. 
+The TryOuts are a collection of small Apps which are tested and working on the Meadow F7.
+Main purpose is to have small examples for a certain connected device and learn the Meadow APIs so these examples can serve as a quickstart.
 
 
 ## Examples

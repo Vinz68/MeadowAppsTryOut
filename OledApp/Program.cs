@@ -5,14 +5,15 @@ namespace OledApp
 {
     class Program
     {
+        static IApp app;
 
         public static void Main(string[] args)
         {
             if (args.Length > 0 && args[0] == "--exitOnDebug") return;
 
             // instantiate and run new meadow app
-            var app = new MeadowApp();
-            app.Run();
+            app = new MeadowApp();
+            (app as MeadowApp).Run();
 
             Thread.Sleep(Timeout.Infinite);
         }

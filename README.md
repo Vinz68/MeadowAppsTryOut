@@ -11,7 +11,7 @@ Main purpose is to have small examples for a certain connected device and learn 
 
 | Project/Folder        | Purpose           | Exta Info        |
 |:---------------:| --------------------- | -------------- |
-| MeadowApp1 | The default starter template, but changed so it works for everyone. | Since Led.StartPulse gives problems the Led.StartBlink is used.  |
+| MeadowApp | The default starter template, but changed so it works for everyone. | Since Led.StartPulse gives problems the Led.StartBlink is used.  |
 |  | |  |
 | OledApp | Display text on 128x32 OLED instead of console. Also add a Button to enable a Led  | Pins: D01 = Led, D03 = Button, D08 = OLED-CLK , D07 = OLED-SDA |
 |  | |  |

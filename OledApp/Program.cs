@@ -13,7 +13,7 @@ namespace OledApp
 
             // instantiate and run new meadow app
             app = new MeadowApp();
-            (app as MeadowApp).Run();
+            //(app as MeadowApp).Run();
             
             Thread.Sleep(Timeout.Infinite);
         }

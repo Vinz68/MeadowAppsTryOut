@@ -17,10 +17,11 @@ namespace OledApp
     {
         const int blinkDuration = 3000; 
         
-        RgbPwmLed rgbPwmLed;        // Using the on board RGB led
-        Led led;                    // Using a LED on pin D01
-        IDigitalInputPort inputBtn;    // Button on pin D03
-        Ssd1306 display;            // Using a 128x32 OLED display, SDA on pin D07, CLK on pin D08
+        RgbPwmLed rgbPwmLed;            // Using the on board RGB led
+        Led led;                        // Using a LED on pin D01
+        IDigitalInputPort inputBtn;     // Button on pin D03
+        IDigitalInputPort inputD04;     // Button on pin D04
+        Ssd1306 display;                // Using a 128x32 OLED display, SDA on pin D07, CLK on pin D08
         GraphicsLibrary graphics;
         readonly Font8x12 font = new Font8x12();
 
@@ -42,7 +43,21 @@ namespace OledApp
             // led on pin D01
             led = new Led(Device.CreateDigitalOutputPort(Device.Pins.D01));
 
-            
+            // create the InputPort with interrupts enabled
+            inputD04 = Device.CreateDigitalInputPort(
+                Device.Pins.D13,
+                InterruptMode.EdgeRising,
+                ResistorMode.PullDown,
+                50); // 50mssec debounche
+                
+
+            // add an event handler
+            inputD04.Changed += (s, e) =>
+            {
+                Console.WriteLine($"interrupt occurred");
+            };
+
+
             Console.WriteLine("Initialize RgbPwmLed...");
             // onboad RGB led(s)
             rgbPwmLed = new RgbPwmLed(
@@ -132,21 +147,25 @@ namespace OledApp
             while (true)
             {
                 Console.WriteLine($"InputBtn.State = {inputBtn.State}");
+                Console.WriteLine($"inputD04.State = {inputD04.State}");
 
                 DisplayText("Blink RED");
                 Blink(Color.Red);
 
                 Console.WriteLine($"InputBtn.State = {inputBtn.State}");
+                Console.WriteLine($"inputD04.State = {inputD04.State}");
 
                 DisplayText("Blink GREEN");
                 Blink(Color.Green);
 
                 Console.WriteLine($"InputBtn.State = {inputBtn.State}");
+                Console.WriteLine($"inputD04.State = {inputD04.State}");
 
                 DisplayText("Blink BLUE");
                 Blink(Color.Blue);
 
                 Console.WriteLine($"InputBtn.State = {inputBtn.State}");
+                Console.WriteLine($"inputD04.State = {inputD04.State}");
 
             }
         }

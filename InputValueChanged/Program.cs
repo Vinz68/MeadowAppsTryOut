@@ -1,9 +1,7 @@
-﻿using System.Threading;
-using Meadow;
+﻿using Meadow;
+using System.Threading;
 
-
-
-namespace MeadowApp
+namespace InputValueChanged
 {
     class Program
     {

@@ -17,10 +17,10 @@ namespace OledApp
     {
         const int blinkDuration = 3000; 
         
-        RgbPwmLed rgbPwmLed;        // Using the on board RGB led
-        Led led;                    // Using a LED on pin D01
-        IDigitalInputPort inputBtn;    // Button on pin D03
-        Ssd1306 display;            // Using a 128x32 OLED display, SDA on pin D07, CLK on pin D08
+        RgbPwmLed rgbPwmLed;            // Using the on board RGB led
+        Led led;                        // Using a LED on pin D01
+        IDigitalInputPort inputBtn;     // Button on pin D03
+        Ssd1306 display;                // Using a 128x32 OLED display, SDA on pin D07, CLK on pin D08
         GraphicsLibrary graphics;
         readonly Font8x12 font = new Font8x12();
 
@@ -39,12 +39,13 @@ namespace OledApp
         protected void InitializePeripherals()
         {
             Console.WriteLine("Initialize LED on pin D01...");
+
             // led on pin D01
             led = new Led(Device.CreateDigitalOutputPort(Device.Pins.D01));
 
             
             Console.WriteLine("Initialize RgbPwmLed...");
-            // onboad RGB led(s)
+            // on-board RGB led(s)
             rgbPwmLed = new RgbPwmLed(
                Device,
                Device.Pins.OnboardLedRed,
